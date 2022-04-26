@@ -7,6 +7,7 @@ const FeedbackStats = () => {
         return acc + cur.rating
     }, 0) / feedback.length
     avarage = avarage.toFixed(1).replace(/[.,]0$/, '')
+    avarage = Math.round(avarage)
 
     return (
         <div className='feedback-stats'>
