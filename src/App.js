@@ -1,25 +1,19 @@
-import { useState } from "react"
+import FeedbackForm from "./components/FeedbackForm"
 import FeedbackList from "./components/FeedbackList"
 import FeedbackStats from "./components/FeedbackStats"
 import Header from "./components/Header"
-import data from './dummyData'
+import { FeedbackProvider } from "./context/Feedback"
 
 function App() {
-
-    const [feedback,setFeedback] = useState(data)
-
-    const feedbackDelete = (id) => {
-        setFeedback(feedback.filter(item => item.id !== id))
-    }
-
     return (
-        <>
+        <FeedbackProvider>
             <Header />
             <div className="container">
-                <FeedbackStats feedback={feedback} />
-                <FeedbackList feedback={feedback} deleteFeedback={feedbackDelete} />
+                <FeedbackForm />
+                <FeedbackStats />
+                <FeedbackList />
             </div>
-        </>
+        </FeedbackProvider>
     )
 }
 

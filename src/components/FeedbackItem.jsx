@@ -1,15 +1,20 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Card from './shared/Card'
-import { FaTimes } from 'react-icons/fa'
+import { FaTimes, FaEdit } from 'react-icons/fa'
+import FeedbackContext from '../context/Feedback'
 
-const FeedbackItem = ({ rating, comment, handleDelete, id }) => {
+const FeedbackItem = ({ rating, text, id }) => {
+    const { feedbackDelete, editItem } = useContext(FeedbackContext)
     return (
         <Card>
             <div className="num-display">{rating}</div>
-            <button className='close' onClick={() => handleDelete(id)}>
+            <button className='close' onClick={() => feedbackDelete(id)}>
                 <FaTimes color='purple' />
             </button>
-            <div className="text-display">{comment}</div>
+            <button className='edit' onClick={() => editItem({ rating, text, id })}>
+                <FaEdit color='purple' />
+            </button>
+            <div className="text-display">{text}</div>
         </Card>
     )
 }
