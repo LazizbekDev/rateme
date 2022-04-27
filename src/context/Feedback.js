@@ -15,14 +15,14 @@ export const FeedbackProvider = ({ children }) => {
     }, [])
 
     const fetchData = async () => {
-        const response = await fetch(`https://miyov.netlify.app/feedback?_sort=id&_order=desc`);
+        const response = await fetch(`https://ratem-e.herokuapp.com/feedback?_sort=id&_order=desc`);
         const data = await response.json()
         setFeedback(data)
         setLoading(false)
     }
 
     const feedbackDelete = async (id) => {
-        await fetch(`https://miyov.netlify.app/feedback/${id}`, {
+        await fetch(`https://ratem-e.herokuapp.com/feedback/${id}`, {
             method: 'DELETE'
         })
 
@@ -30,7 +30,7 @@ export const FeedbackProvider = ({ children }) => {
     }
 
     const addFeedback = async (newFeedback) => {
-        const response = await fetch(`https://miyov.netlify.app/feedback`, {
+        const response = await fetch(`https://ratem-e.herokuapp.com/feedback`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -49,7 +49,7 @@ export const FeedbackProvider = ({ children }) => {
     }
 
     const updateFeedback = async (id, newFeedback) => {
-        const response = await fetch(`https://miyov.netlify.app/feedback/${id}`, {
+        const response = await fetch(`https://ratem-e.herokuapp.com/feedback/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
