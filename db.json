@@ -9,6 +9,16 @@
       "text": "some]code\\se\\se\\\\\\const data = await response.json();\\",
       "rating": 10,
       "id": 3
+    },
+    {
+      "text": "eng qizigi endi ishladi",
+      "rating": 10,
+      "id": 4
+    },
+    {
+      "text": "bu yaxshi, bilganimdan hursandman",
+      "rating": 10,
+      "id": 5
     }
   ]
 }
