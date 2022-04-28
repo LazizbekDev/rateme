@@ -3,6 +3,7 @@ import FeedbackList from "./components/FeedbackList"
 import FeedbackStats from "./components/FeedbackStats"
 import Header from "./components/Header"
 import { FeedbackProvider } from "./context/Feedback"
+import "./til"
 
 function App() {
     return (

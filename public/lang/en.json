@@ -1,0 +1,8 @@
+{
+    "heading_title": "How would you rate me? ;)",
+    "btn": "Send",
+    "placeholder": "Your feedback is important",
+    "review": "reviews: {{numOfViews}}",
+    "all": "avarege rating: {{numOfAll}}",
+    "msg": "should be least 10 letters in your feedback"
+}

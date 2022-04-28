@@ -3,6 +3,7 @@ import FeedbackContext from '../context/Feedback'
 import Card from './shared/Card'
 import {Button} from './shared/Button'
 import RatingSelect from './RatingSelect'
+import { useTranslation } from 'react-i18next'
 
 const FeedbackForm = () => {
     const { addFeedback, feedbackEdit, updateFeedback } = useContext(FeedbackContext)
@@ -10,6 +11,7 @@ const FeedbackForm = () => {
     const [disabled, setDisabled] = useState(true)
     const [msg, setMsg] = useState('')
     const [rating, setRating] = useState(10)
+    const {t} = useTranslation()
 
     useEffect(() => {
         if (feedbackEdit.edit === true) {
@@ -54,23 +56,23 @@ const FeedbackForm = () => {
     return (
         <Card>
             <form onSubmit={handleSubmit}>
-                <h2>Menga qanday baho berasiz? ;)</h2>
+                <h2>{t('heading_title')}</h2>
                 <RatingSelect select={(rating) => setRating(rating)} />
                 <div className="input-group">
                     <input
                         type="text"
                         onChange={handleChange}
                         value={text}
-                        placeholder="Fikringizni juda muhim"
+                        placeholder={t('placeholder')}
                     />
                     <Button
                         version={'primary'}
                         type='submit'
                         isDisabled={disabled}
-                    >Joylash</Button>
+                    >{t('btn')}</Button>
                 </div>
             </form>
-            {msg && <div className='message'>{msg}</div>}
+            {msg && <div className='message'>{t('msg')}</div>}
         </Card>
     )
 }

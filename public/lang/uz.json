@@ -1,0 +1,8 @@
+{
+    "heading_title": "Menga qanday baho berasiz? ;)",
+    "btn": "Joylash",
+    "placeholder": "fikringiz juda muhim emas",
+    "review": "{{numOfViews}} ta sharh",
+    "all": "umumiy: {{numOfAll}}",
+    "msg": "Fikringizda kamida 10 ta harf bo'lishi kerak"
+}
