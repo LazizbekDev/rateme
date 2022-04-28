@@ -26,6 +26,9 @@ export const FeedbackProvider = ({ children }) => {
             method: 'DELETE'
         })
 
+        let arr = JSON.parse(localStorage.getItem('accept'))
+        const deleted = arr.filter(key => key !== id)
+        localStorage.setItem('accept', JSON.stringify(deleted))
         setFeedback(feedback.filter(item => item.id !== id))
     }
 
@@ -39,6 +42,12 @@ export const FeedbackProvider = ({ children }) => {
         });
         const data = await response.json();
         setFeedback([data, ...feedback])
+
+        localStorage.getItem('accept') ?? localStorage.setItem('accept', '[]');
+
+        let arr = JSON.parse(localStorage.getItem('accept'))
+        arr.push(data.id);
+        localStorage.setItem('accept', JSON.stringify(arr))
     }
 
     const editItem = (item) => {
