@@ -26,7 +26,7 @@ export const FeedbackProvider = ({ children }) => {
             method: 'DELETE'
         })
 
-        let arr = JSON.parse(localStorage.getItem('accept'))
+        let arr = JSON.parse(localStorage.getItem('accept')) || []
         const deleted = arr.filter(key => key !== id)
         localStorage.setItem('accept', JSON.stringify(deleted))
         setFeedback(feedback.filter(item => item.id !== id))

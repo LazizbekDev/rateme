@@ -5,7 +5,7 @@ import FeedbackContext from '../context/Feedback'
 
 const FeedbackItem = ({ rating, text, id }) => {
     const { editItem } = useContext(FeedbackContext)
-    const items = JSON.parse(localStorage.getItem('accept'));
+    const items = JSON.parse(localStorage.getItem('accept')) || [];
     const accepted = items.find(item => item === id)
     return (
         <Card>
@@ -20,7 +20,6 @@ const FeedbackItem = ({ rating, text, id }) => {
                     </button>
                 </>
             )}
-            {console.log(accepted)}
             <div className="text-display">{text}</div>
         </Card>
     )
