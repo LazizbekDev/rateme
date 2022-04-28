@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #10112b;
+    background-color: #151516;
     color: #fff;
     line-height: 1.6;
 }
@@ -30,13 +30,18 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
-    background-color: crimson;
-    backdrop-filter: blur(6px);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .card {
-    background-color: #fff;
-    color: #333;
+    background-color: #223a38;
+    color: #fff;
     border-radius: 15px;
     padding: 40px 50px;
     margin: 20px 0;
@@ -64,14 +69,15 @@ header {
 .rating li,
 .num-display {
     position: relative;
-    background: #f4f4f4;
+    background: white;
     width: 50px;
     height: 50px;
     padding: 10px;
     text-align: center;
     border-radius: 50%;
     font-size: 19px;
-    border: 1px #eee solid;
+    border: 1px #fff solid;
+    color: #151516;
     transition: 0.3s;
 }
 
@@ -89,7 +95,7 @@ header {
 
 .rating li:hover,
 .num-display {
-    background: crimson;
+    background: #151516;
     color: #fff;
 }
 
@@ -98,7 +104,7 @@ header {
 }
 
 [type='radio']:checked~label {
-    background: #ff6a95;
+    background: #151516;
     color: #fff;
 }
 
@@ -114,6 +120,8 @@ input {
     flex-grow: 2;
     border: none;
     font-size: 16px;
+    background-color: #223a38;
+    color: white;
 }
 
 input:focus {
@@ -133,7 +141,6 @@ input:focus {
     left: -10px;
 }
 
-.close,
 .edit {
     position: absolute;
     top: 10px;
@@ -141,10 +148,6 @@ input:focus {
     cursor: pointer;
     background: none;
     border: none;
-}
-
-.edit {
-    right: 40px;
 }
 
 .btn {
@@ -158,11 +161,12 @@ input:focus {
 }
 
 .btn-primary {
-    background-color: #202142;
+    background-color: #fff;
+    color: #151516;
 }
 
 .btn-secondary {
-    background: #ff6a95;
+    background: #151516;
 }
 
 .btn:hover {
@@ -185,7 +189,7 @@ input:focus {
 .message {
     padding-top: 10px;
     text-align: center;
-    color: rebeccapurple;
+    color: white;
 }
 
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
@@ -203,7 +207,7 @@ input:focus {
 }
 
 .about-link a:hover {
-    color: #ff6a95;
+    color: #151516;
 }
 
 .about h1 {
@@ -230,4 +234,10 @@ input:focus {
     .input-group input {
         width: 80%;
     }
+}
+
+a {
+    color: inherit;
+    font-size: inherit;
+    text-decoration: none;
 }

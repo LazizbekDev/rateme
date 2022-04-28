@@ -16,7 +16,7 @@ const FeedbackItem = ({ rating, text, id }) => {
                         <FaTimes color='purple' />
                     </button> */}
                     <button className='edit' onClick={() => editItem({ rating, text, id })}>
-                        <FaEdit color='purple' />
+                        <FaEdit color='white' />
                     </button>
                 </>
             )}
