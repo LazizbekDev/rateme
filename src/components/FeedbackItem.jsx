@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import Card from './shared/Card'
-import { FaTimes, FaEdit } from 'react-icons/fa'
+import { FaEdit } from 'react-icons/fa'
 import FeedbackContext from '../context/Feedback'
 
 const FeedbackItem = ({ rating, text, id }) => {
-    const { feedbackDelete, editItem } = useContext(FeedbackContext)
+    const { editItem } = useContext(FeedbackContext)
     const items = JSON.parse(localStorage.getItem('accept'));
     const accepted = items.find(item => item === id)
     return (
