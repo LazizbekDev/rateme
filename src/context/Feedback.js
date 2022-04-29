@@ -15,25 +15,25 @@ export const FeedbackProvider = ({ children }) => {
     }, [])
 
     const fetchData = async () => {
-        const response = await fetch(`https://ratem-e.herokuapp.com/feedback?_sort=id&_order=desc`);
+        const response = await fetch(`https://fishingapi.herokuapp.com/feedback`);
         const data = await response.json()
         setFeedback(data)
         setLoading(false)
     }
 
     const feedbackDelete = async (id) => {
-        await fetch(`https://ratem-e.herokuapp.com/feedback/${id}`, {
+        await fetch(`https://fishingapi.herokuapp.com/feedback/${id}`, {
             method: 'DELETE'
         })
 
         let arr = JSON.parse(localStorage.getItem('accept')) || []
         const deleted = arr.filter(key => key !== id)
         localStorage.setItem('accept', JSON.stringify(deleted))
-        setFeedback(feedback.filter(item => item.id !== id))
+        setFeedback(feedback.filter(item => item._id !== id))
     }
 
     const addFeedback = async (newFeedback) => {
-        const response = await fetch(`https://ratem-e.herokuapp.com/feedback`, {
+        const response = await fetch(`https://fishingapi.herokuapp.com/feedback`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ export const FeedbackProvider = ({ children }) => {
         localStorage.getItem('accept') ?? localStorage.setItem('accept', '[]');
 
         let arr = JSON.parse(localStorage.getItem('accept'))
-        arr.push(data.id);
+        arr.push(data._id);
         localStorage.setItem('accept', JSON.stringify(arr))
     }
 
@@ -58,7 +58,7 @@ export const FeedbackProvider = ({ children }) => {
     }
 
     const updateFeedback = async (id, newFeedback) => {
-        const response = await fetch(`https://ratem-e.herokuapp.com/feedback/${id}`, {
+        const response = await fetch(`https://fishingapi.herokuapp.com/feedback/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -67,7 +67,7 @@ export const FeedbackProvider = ({ children }) => {
         })
 
         const data = await response.json()
-        setFeedback(feedback.map(item => item.id === id ? { ...item, ...data } : item))
+        setFeedback(feedback.map(item => item._id === id ? { ...item, ...data } : item))
     }
 
     return <FeedbackContext.Provider value={{

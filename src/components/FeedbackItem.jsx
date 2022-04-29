@@ -12,9 +12,6 @@ const FeedbackItem = ({ rating, text, id }) => {
             <div className="num-display">{rating}</div>
             {accepted === id && (
                 <>
-                    {/* <button className='close' onClick={() => feedbackDelete(id)}>
-                        <FaTimes color='purple' />
-                    </button> */}
                     <button className='edit' onClick={() => editItem({ rating, text, id })}>
                         <FaEdit color='white' />
                     </button>

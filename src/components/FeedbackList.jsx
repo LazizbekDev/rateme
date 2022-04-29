@@ -23,7 +23,7 @@ const FeedbackList = () => {
                         <FeedbackItem
                             rating={item.rating}
                             text={item.text}
-                            id={item.id}
+                            id={item._id}
                         />
                     </motion.div>
                 ))}
