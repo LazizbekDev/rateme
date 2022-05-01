@@ -141,6 +141,12 @@ input:focus {
     left: -10px;
 }
 
+.feedback-list {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.close,
 .edit {
     position: absolute;
     top: 10px;
@@ -148,6 +154,10 @@ input:focus {
     cursor: pointer;
     background: none;
     border: none;
+}
+
+.edit {
+    margin-right: 20px;
 }
 
 .btn {
@@ -240,4 +250,18 @@ a {
     color: inherit;
     font-size: inherit;
     text-decoration: none;
+}
+
+.loader {
+    color: aqua !important;
+    animation-name: loader;
+    animation-duration: .4s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
+@keyframes loader {
+    to {
+        transform: rotate(360deg);
+    }
 }
